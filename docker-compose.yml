@@ -24,3 +24,10 @@ services:
       - ./db:/usr/src/db
     ports:
       - "27017:27017"
+  client:
+    build: ./client
+    volumes:
+      - ./client:/usr/src/app
+    ports:
+      - "3000:3000"
+    hostname: client
