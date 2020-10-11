@@ -1,4 +1,11 @@
 const { Router } = require("express");
+const {
+  getAllUsers,
+  deleteUser,
+  createUser,
+  getSingleUser,
+  editUserData,
+} = require("../controllers/user.ctrl");
 
 const router = Router();
 
