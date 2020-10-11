@@ -1,0 +1,39 @@
+@charset "utf-8";
+
+$theme-colors: (
+  "purple": #7e52a0,
+  "white": #ffffff,
+  "black": #000,
+  "grey": #ccc,
+);
+
+// TEXT
+$font-family-sans-serif: "Roboto", sans-serif;
+$font-family-serif: Georgia, "Times New Roman", Times, serif;
+$font-family-base: $font-family-sans-serif;
+$font-size-base: 1rem;
+// IMPORT BOOTSTRAP
+@import "~bootstrap/scss/bootstrap";
+@import "~react-toastify/dist/ReactToastify.css";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  background: #fff !important;
+  font-family: $font-family-sans-serif;
+  box-sizing: border-box;
+  font-weight: 300;
+  font-size: 20px;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+a {
+  text-decoration: none !important;
+}
+.is-clickable {
+  cursor: pointer;
+}
