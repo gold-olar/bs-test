@@ -11,7 +11,7 @@ class UserController extends BaseController {
       body: { name },
     } = req;
     try {
-      const existingUser = User.find({ name });
+      const existingUser = await User.findOne({ name });
       if (existingUser) {
         return super.sendError(res, null, "User already exists !", 400);
       }
@@ -29,6 +29,7 @@ class UserController extends BaseController {
     try {
       const {
         params: { userId },
+        body,
       } = req;
 
       const user = await User.findOneAndUpdate({ _id: userId }, body, {
@@ -89,9 +90,6 @@ class UserController extends BaseController {
   async getAllUsers(req, res) {
     try {
       const users = await User.find();
-      if (!users) {
-        return super.sendError(res, null, "There are no users yet !", 404);
-      }
       return super.sendSuccess(res, { users }, "Fetched all users", 200);
     } catch (err) {
       return super.sendError(res, err, err.message, err.code);
