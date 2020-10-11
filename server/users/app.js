@@ -1,4 +1,3 @@
-const cookieParser = require("cookie-parser");
 const express = require("express");
 const cors = require("cors");
 const logger = require("morgan");
@@ -31,7 +30,7 @@ app.use(
     target:
       process.env.NODE_ENV !== "production"
         ? "http://tasks:3002"
-        : "https://taskie-tasks.herokuapp.com",
+        : "Production server for tasks",
     changeOrigin: false,
   })
 );
@@ -39,7 +38,6 @@ app.use(
 app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
 
 app.use(express.static(path.join(__dirname, "public")));
 

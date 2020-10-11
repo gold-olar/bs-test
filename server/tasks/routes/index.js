@@ -1,11 +1,11 @@
-const { Router } = require('express');
+const { Router } = require("express");
 
 const router = Router();
 
 /* GET index page. */
-router.get('/', (req, res) => {
+router.get("/", (req, res) => {
   res.json({
-    title: 'Express'
+    title: "Express",
   });
 });
 
