@@ -6,6 +6,7 @@ const {
   getSingleUser,
   editUserData,
 } = require("../controllers/user.ctrl");
+const { validateUserCreation } = require("../middlewares/validator");
 
 const router = Router();
 
@@ -13,7 +14,7 @@ const router = Router();
 
 router.get("/all", getAllUsers);
 
-router.post("/create", createUser);
+router.post("/create", validateUserCreation, createUser);
 
 router.get("/:userId", getSingleUser);
 

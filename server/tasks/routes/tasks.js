@@ -6,12 +6,13 @@ const {
   updateTask,
   deleteTask,
 } = require("../controllers/task.ctrl");
+const { validateTaskCreation } = require("../middlewares/validator");
 
 const router = Router();
 
 router.get("/all", fetchAllTasks);
 
-router.post("/create", createTask);
+router.post("/create", validateTaskCreation, createTask);
 
 router.get("/:taskId", fetchTask);
 
