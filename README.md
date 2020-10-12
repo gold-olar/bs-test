@@ -61,8 +61,18 @@ On your browser, open up `http://localhost:3000`
 ## Block Diagram
 
 The image below shows the architecture used for this project
+
 ![Block Diagram of architecture](./block-diagram.png)
 
 ## Running Tests
 
-Coming soon....
+Tests were written for each backend service.
+
+- Running tests for users service: Navigate into the users directory and run
+  ```bash
+  npm run test
+  ```
+- Running tests for tasks service: Navigate into the tasks directory and run
+  ```bash
+  npm run test
+  ```
