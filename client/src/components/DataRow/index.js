@@ -22,13 +22,16 @@ const DataRow = ({
     <Col md={12}>
       <div className="data">
         {tableType === "tasks" && (
-          <span>
+          <span onClick={() => handleMarkingTasks(data, setLoading)}>
             <img
               className="task__status-icon"
-              onClick={() => handleMarkingTasks(data, setLoading)}
               src={state === "done" ? completedIcon : pendingIcon}
               alt="Task Status Icon"
             />
+            <span className="task-cta">
+              {" "}
+              {state === "done" ? "Set as Pending" : "Set as completed"}{" "}
+            </span>
           </span>
         )}
         <div onClick={() => handleRowClick(data, tableType)}>
