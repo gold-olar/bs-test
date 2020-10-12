@@ -43,9 +43,9 @@ app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/api/users", userRouter);
 
-// app.get("*", (req, res) => {
-//   res.sendFile(path.resolve(__dirname, "public", "index.html"));
-// });
+app.get("*", (req, res) => {
+  res.sendFile(path.resolve(__dirname, "public", "index.html"));
+});
 
 app.use((_req, res) => {
   res.status(404).json({

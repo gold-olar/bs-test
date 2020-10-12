@@ -1,6 +1,15 @@
 # Project Report
 
-This project was built using a microservice architecture. its folder directory is divided into
+This project was built using a microservice architecture.
+
+Technologies used:
+
+- Nodejs
+- ReactJs
+- MongoDB
+- Docker
+
+The project folder directory is divided into
 
 - Client : contains the client app built with ReactJS
 - Server : contains two services (Tasks and Users) built with NodeJS
