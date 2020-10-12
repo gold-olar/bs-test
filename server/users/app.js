@@ -28,7 +28,7 @@ app.use(
   "/api/tasks",
   createProxyMiddleware({
     target: process.env.TASKS_BASEURL,
-    changeOrigin: false,
+    changeOrigin: true,
   })
 );
 
