@@ -31,19 +31,21 @@ Hmmmmm....
 
 - Running the client app: Navigate into the client directory and run
   ```bash
-  npm start
+  npm install && npm start
   ```
 - Running the users service : This service depends on MongoDB, so please ensure you have that installed on you PC. Navigate into the users directory and run
 
 ```bash
- npm start
+ npm install && npm start
 ```
 
 - Running the tasks service : This service depends on MongoDB, so please ensure you have that installed on you PC. Navigate into the tasks directory and run
 
 ```bash
- npm start
+npm install && npm start
 ```
+
+The commands you ran should install the necessary dependencies and run each service.
 
 On your browser, open up `http://localhost:3000`
 
