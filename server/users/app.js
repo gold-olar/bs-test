@@ -27,10 +27,7 @@ app.use(cors());
 app.use(
   "/api/tasks",
   createProxyMiddleware({
-    target:
-      process.env.NODE_ENV !== "production"
-        ? process.env.TASKS_BASEURL
-        : "Production server for tasks",
+    target: process.env.TASKS_BASEURL,
     changeOrigin: false,
   })
 );
