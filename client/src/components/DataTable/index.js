@@ -4,7 +4,7 @@ import DataRow from "../DataRow";
 import { Col, Row } from "react-bootstrap";
 import { TASK_MODAL, USER_MODAL, VIEW_TASK } from "../../util/constants";
 import { useHistory } from "react-router-dom";
-import { remove } from "./helper";
+import { remove, markTask } from "./helper";
 
 const DataTable = ({
   setShowModal,
@@ -30,6 +30,9 @@ const DataTable = ({
   };
   const handleRemoveData = (data, setLoading) => {
     return remove(data, setLoading, tableType, removeData);
+  };
+  const handleMarkingTasks = (data, setLoading) => {
+    return markTask(data, setLoading, editData);
   };
 
   return (
@@ -61,6 +64,7 @@ const DataTable = ({
                 data={data}
                 key={data._id}
                 handleRowClick={handleRowClick}
+                handleMarkingTasks={handleMarkingTasks}
                 handleRemoveData={handleRemoveData}
               />
             ))}
