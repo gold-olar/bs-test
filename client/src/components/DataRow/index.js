@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 import { Col, Spinner } from "react-bootstrap";
 import completedIcon from "../../assets/icons/completed.png";
 import pendingIcon from "../../assets/icons/pending.png";
@@ -6,7 +6,6 @@ import "./styles.scss";
 import editIcon from "../../assets/icons/edit.png";
 import deleteIcon from "../../assets/icons/delete.png";
 import { USER_MODAL, TASK_MODAL } from "../../util/constants";
-import { Context as TaskContext } from "../../context/tasksContext";
 
 const DataRow = ({
   data,
@@ -19,8 +18,6 @@ const DataRow = ({
   const { state, description, name } = data;
   const [loading, setLoading] = useState(false);
 
-  const { removeTaskFromTaskList, editATask } = useContext(TaskContext);
-
   return (
     <Col md={12}>
       <div className="data">
@@ -28,7 +25,7 @@ const DataRow = ({
           <span>
             <img
               className="task__status-icon"
-              onClick={() => handleMarkingTasks(data, setLoading, editATask)}
+              onClick={() => handleMarkingTasks(data, setLoading)}
               src={state === "done" ? completedIcon : pendingIcon}
               alt="Task Status Icon"
             />

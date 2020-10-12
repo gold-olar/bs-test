@@ -101,6 +101,19 @@ class TaskController extends BaseController {
       return super.sendError(res, err, err.message, err.code);
     }
   }
+
+  async deletUsersTasks(req, res) {
+    const {
+      body: { userId },
+    } = req;
+    try {
+      await Task.deleteMany({ user_id: userId });
+
+      return super.sendSuccess(res, null, "Deleted Successfully !", 200);
+    } catch (err) {
+      return super.sendError(res, err, err.message, err.code);
+    }
+  }
 }
 
 module.exports = new TaskController();

@@ -5,6 +5,7 @@ const {
   fetchTask,
   updateTask,
   deleteTask,
+  deletUsersTasks,
 } = require("../controllers/task.ctrl");
 const { validateTaskCreation } = require("../middlewares/validator");
 
@@ -19,5 +20,7 @@ router.get("/:taskId", fetchTask);
 router.patch("/:taskId", updateTask);
 
 router.delete("/:taskId", deleteTask);
+
+router.delete("/delete-many", deletUsersTasks);
 
 module.exports = router;

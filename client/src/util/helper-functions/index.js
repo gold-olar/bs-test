@@ -11,20 +11,6 @@ export const notifyUser = (response) => {
 };
 
 /**
- * Function to search an array by a particular parameter
- * @param {array to search through} array
- * @param {key you want to search for} param
- * @param {value to compare with} value
- */
-export const searchArrayByParam = (array, param, value) => {
-  return (
-    array &&
-    array.length &&
-    array.find((arrayItem) => arrayItem[param] === value)
-  );
-};
-
-/**
  * Function to filter an array by a particular parameter
  * @param {array to search through} array
  * @param {key you want to search for} param

@@ -18,3 +18,15 @@
     // text-transform: uppercase;
   }
 }
+
+@media screen and (max-width: 600px) {
+  .page-header {
+    flex-direction: column;
+    h6 {
+      text-align: center;
+    }
+    button {
+      margin-top: 5%;
+    }
+  }
+}

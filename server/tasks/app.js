@@ -1,6 +1,5 @@
 const express = require("express");
 const mongoose = require("mongoose");
-const httpErrors = require("http-errors");
 const logger = require("morgan");
 const db = require("./config/database");
 
@@ -23,12 +22,14 @@ app.use(express.urlencoded({ extended: false }));
 
 app.use("/api/tasks", tasksRouter);
 
-// catch 404 and forward to error handler
-app.use((req, res, next) => {
-  next(httpErrors(404));
+app.use((_req, res) => {
+  res.status(404).json({
+    status: false,
+    statusCode: 404,
+    message: "api endpoint not found",
+  });
 });
 
-// error handler
 app.use((err, req, res, next) => {
   // set locals, only providing error in development
   res.locals.message = err.message;

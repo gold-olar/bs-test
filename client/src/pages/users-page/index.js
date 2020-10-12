@@ -16,7 +16,7 @@ const UsersPage = ({ setShowModal }) => {
 
   return (
     <Container>
-      <Row className="p-5">
+      <Row className="p-3">
         <PageHeader setShowModal={setShowModal} pageTitle="users" />
         <Col>
           <DataTable

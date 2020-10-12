@@ -29,7 +29,7 @@ app.use(
   createProxyMiddleware({
     target:
       process.env.NODE_ENV !== "production"
-        ? "http://tasks:3002"
+        ? process.env.TASKS_BASEURL
         : "Production server for tasks",
     changeOrigin: false,
   })

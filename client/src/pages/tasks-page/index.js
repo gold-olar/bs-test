@@ -27,7 +27,7 @@ const TasksPage = ({
 
   return (
     <Container>
-      <Row className="p-5">
+      <Row className="p-3">
         <PageHeader
           setShowModal={setShowModal}
           pageTitle="tasks"
@@ -38,6 +38,7 @@ const TasksPage = ({
             data={usersTasks}
             tableType="tasks"
             setShowModal={setShowModal}
+            user={userId}
             editData={editATask}
             removeData={removeTaskFromTaskList}
           />
