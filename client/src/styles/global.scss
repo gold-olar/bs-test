@@ -37,3 +37,13 @@ a {
 .is-clickable {
   cursor: pointer;
 }
+.btn {
+  border-radius: 15px;
+}
+.error-label {
+  color: red;
+}
+.Toastify__toast {
+  border-radius: 15px !important;
+  font-weight: 600;
+}

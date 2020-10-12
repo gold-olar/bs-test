@@ -1,0 +1,49 @@
+.data {
+  display: flex;
+  padding: 1% 0%;
+  border-bottom: 2px solid grey;
+  span {
+    flex: 1;
+  }
+  div {
+    flex: 4;
+    font-size: 90%;
+    cursor: pointer;
+    p {
+      font-weight: 600;
+    }
+    span {
+      font-weight: 300;
+      font-size: 90%;
+    }
+  }
+  span:last-child {
+    flex: 1;
+  }
+}
+.task__status-icon {
+  height: 50px;
+  width: auto;
+  cursor: pointer;
+  &:hover {
+    transform: rotate(-20deg);
+    transition: all 0.4s;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .task__status-icon {
+    height: 30px;
+    width: auto;
+  }
+}
+.action-icon {
+  width: 20px !important;
+  cursor: pointer;
+  margin-right: 10%;
+  height: auto;
+  &:hover {
+    transform: scale(1.5);
+    transition: all 0.4s;
+  }
+}

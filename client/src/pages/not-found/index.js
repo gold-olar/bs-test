@@ -15,7 +15,7 @@ function NotFoundPage(props) {
             <Button
               onClick={() => props.history.goBack()}
               className="btn-block"
-              variant="primary"
+              variant="dark"
             >
               Go Back
             </Button>
