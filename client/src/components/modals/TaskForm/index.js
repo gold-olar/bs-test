@@ -7,15 +7,15 @@ import { Context as TasksContext } from "../../../context/tasksContext";
 const TaskForm = ({ setShowModal, data }) => {
   const { register, handleSubmit, errors } = useForm();
   const [loading, setLoading] = useState(false);
-  const { editTask = false, taskData = {} } = data;
+  const { edit = false, editData = {}, user } = data;
 
   const { addNewTask, editATask } = useContext(TasksContext);
 
   const submit = (formData) => {
     return handleTasks(
-      { ...formData },
-      editTask,
-      taskData,
+      { ...formData, userId: user },
+      edit,
+      editData,
       setLoading,
       setShowModal,
       addNewTask,
@@ -25,10 +25,7 @@ const TaskForm = ({ setShowModal, data }) => {
 
   return (
     <>
-      <h5 className="text-center mb-3">
-        {" "}
-        {editTask ? "Edit Task" : "Add Task "}
-      </h5>
+      <h5 className="text-center mb-3"> {edit ? "Edit Task" : "Add Task "}</h5>
 
       <form onSubmit={handleSubmit(submit)}>
         <FormGroup>
@@ -43,7 +40,7 @@ const TaskForm = ({ setShowModal, data }) => {
             rows="10"
             className="form-control"
             name="description"
-            defaultValue={taskData?.description}
+            defaultValue={editData?.description}
           />
         </FormGroup>
 
@@ -55,7 +52,7 @@ const TaskForm = ({ setShowModal, data }) => {
           disabled={loading}
           className="mt-4"
         >
-          {!loading && <span> {editTask ? "Edit Task" : "Add Task "}</span>}
+          {!loading && <span> {edit ? "Edit Task" : "Add Task "}</span>}
 
           {loading && (
             <Spinner

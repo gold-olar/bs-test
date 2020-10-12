@@ -18,8 +18,10 @@ export const handleUsers = async (
   const response = edit
     ? await editAUser(userData)
     : await createAUser(userData);
+
   response && setLoading(false);
   response && notifyUser(response);
+
   if (response && response.status) {
     edit ? editUserFromState(response.data) : addToState(response.data);
     return setShowModal({
