@@ -1,6 +1,6 @@
 # Project Report
 
-This project was built using a microservice architecture.
+This project was built using a microservice architecture.You can quickly check it out here [View Deployed app](https://bs-testapp.herokuapp.com/).
 
 Technologies used:
 
