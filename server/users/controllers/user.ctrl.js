@@ -34,6 +34,7 @@ class UserController extends BaseController {
 
       const user = await User.findOneAndUpdate({ _id: userId }, body, {
         new: true,
+        useFindAndModify: false,
       });
 
       if (!user) {
@@ -75,7 +76,12 @@ class UserController extends BaseController {
     } = req;
 
     try {
-      const deletedUser = await User.findOneAndDelete({ _id: userId });
+      const deletedUser = await User.findOneAndDelete(
+        { _id: userId },
+        {
+          useFindAndModify: false,
+        }
+      );
 
       if (!deletedUser) {
         return super.sendError(res, null, "User does not exist.", 404);

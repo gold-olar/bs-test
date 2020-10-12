@@ -72,9 +72,14 @@ class TaskController extends BaseController {
         return super.sendError(res, null, "Task does not exist.", 400);
       }
 
-      await Task.findOneAndDelete({
-        _id: taskId,
-      });
+      await Task.findOneAndDelete(
+        {
+          _id: taskId,
+        },
+        {
+          useFindAndModify: false,
+        }
+      );
 
       return super.sendSuccess(res, null, "Task deleted !", 200);
     } catch (err) {
@@ -90,6 +95,7 @@ class TaskController extends BaseController {
       } = req;
       const task = await Task.findOneAndUpdate({ _id: taskId }, body, {
         new: true,
+        useFindAndModify: false,
       });
 
       if (!task) {
